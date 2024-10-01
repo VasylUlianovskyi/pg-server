@@ -1,0 +1,16 @@
+{
+  "name": "pg-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node .",
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
