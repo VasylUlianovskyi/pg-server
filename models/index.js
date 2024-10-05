@@ -20,6 +20,15 @@ db.pool = pool;
 db.User = User;
 User.pool = pool;
 
+// (async function () {
+//   try {
+//     const user = await User.getBuId(1);
+//     console.log(user);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// })();
+
 module.exports = db;
 
 // promises then/catch
