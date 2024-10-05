@@ -19,3 +19,10 @@ module.exports.CREATE_USER_VALIDATION_SCHEMA = yup.object({
     .matches(/^\+380\d{9}$/)
     .required(),
 });
+
+module.exports.PAGE_VALIDATION_SCHEMA = yup.number().min(1).integer();
+module.exports.RESULTS_VALIDATION_SCHEMA = yup
+  .number()
+  .min(5)
+  .max(50)
+  .integer();

@@ -12,10 +12,7 @@ module.exports.createUser = async (req, res, next) => {
 };
 
 module.exports.getAllUsers = async (req, res, next) => {
-  const { page, results } = req.query;
-
-  const limit = results;
-  const offset = (page - 1) * results;
+  const { limit, offset } = req.pagination;
 
   try {
     const foundUsers = await User.getAll(limit, offset);
