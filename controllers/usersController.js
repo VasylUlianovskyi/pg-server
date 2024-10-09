@@ -70,3 +70,15 @@ module.exports.deleteUserById = async (req, res, next) => {
     next(err);
   }
 };
+
+module.exports.getUserPhones = async (req, res, next) => {
+  const { userId } = req.params;
+  const { brand } = req.query;
+
+  try {
+    const phones = await User.getPhonesByUserId(userId, brand);
+    res.status(200).send(phones);
+  } catch (err) {
+    next(err);
+  }
+};

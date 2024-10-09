@@ -1,5 +1,3 @@
-const pool = require('./');
-
 class User {
   static async create ({ firstName, lastName, email, tel }) {
     try {
@@ -95,6 +93,28 @@ class User {
       } = await User.pool.query(query, [userId]);
 
       return foundUser;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async getPhonesByUserId (userId, brand, startDate, endDate) {
+    try {
+      let query = `
+        SELECT phones.*
+        FROM phones
+        JOIN users_phones ON phones.id = users_phones.id
+        WHERE users_phones.user_id = $1
+      `;
+      const params = [userId];
+
+      if (brand) {
+        query += ` AND phones.brand = $2`;
+        params.push(brand);
+      }
+
+      const { rows } = await User.pool.query(query, params);
+      return rows;
     } catch (err) {
       throw err;
     }

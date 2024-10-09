@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 const User = require('./user');
+const Phone = require('./phone');
 
 //TODO: move to comfig.js / process.evv
 
@@ -18,7 +19,9 @@ process.on('beforeExit', () => pool.end());
 const db = {};
 db.pool = pool;
 db.User = User;
+db.Phone = Phone;
 User.pool = pool;
+Phone.pool = pool;
 
 // (async function () {
 //   try {

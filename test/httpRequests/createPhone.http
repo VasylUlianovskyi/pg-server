@@ -1,0 +1,39 @@
+### 201 {phone}
+
+POST http://localhost:5000/phones HTTP/1.1
+Content-Type: application/json
+
+{
+    "brand": "Apple",
+    "model": "iPhone 14",
+    "os": "iOS",
+    "screen_size": 6.1,
+    "ram": 6,
+    "storage_capacity": 128,
+    "battery_capacity": 3279,
+    "camera_megapixels": 12,
+    "price": 999,
+    "release_date": "2022-09-16",
+    "color": "Black",
+    "is_dual_sim": true
+}
+
+
+### 422 {phone}
+
+POST http://localhost:5000/phones HTTP/1.1
+Content-Type: application/json
+
+{
+    "model": "iPhone 14",
+    "os": "iOS",
+    "screen_size": 6.1,
+    "ram": 6,
+    "storage_capacity": 128,
+    "battery_capacity": 3279,
+    "camera_megapixels": 12,
+    "price": 999,
+    "release_date": "2022-09-16",
+    "color": "Black",
+    "is_dual_sim": true
+}

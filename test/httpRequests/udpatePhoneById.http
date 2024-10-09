@@ -1,0 +1,18 @@
+### 200 {phone}
+PATCH http://localhost:5000/phones/1
+Content-Type: application/json
+
+
+{
+    "brand": "Apple",
+    "model": "iPhone 16"
+}
+
+### 422 {phone}
+PATCH http://localhost:5000/phones/1
+Content-Type: application/json
+
+{
+    "brand": "",
+    "model": "iPhone 16"
+}
