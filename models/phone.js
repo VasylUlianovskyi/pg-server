@@ -15,7 +15,7 @@ class Phone {
   }) {
     try {
       const {
-        rows: [createPhone],
+        rows: [createdPhone],
       } = await Phone.pool.query(
         `
           INSERT INTO phones (brand,
@@ -48,6 +48,7 @@ class Phone {
           is_dual_sim,
         ]
       );
+      return createdPhone;
     } catch (err) {
       throw err;
     }

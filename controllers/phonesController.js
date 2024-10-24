@@ -4,8 +4,11 @@ const { Phone } = require('./../models');
 module.exports.createPhone = async (req, res, next) => {
   const { body } = req;
   try {
-    const createPhone = await Phone.create(body);
-    res.status(201).send(createPhone);
+    const createdPhone = await Phone.create(body);
+    res.status(201).send({
+      message: 'Phone created successfully',
+      phone: createdPhone,
+    });
   } catch (err) {
     next(err);
   }
